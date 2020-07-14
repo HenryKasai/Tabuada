@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Tabuada
 {
@@ -7,14 +7,14 @@ namespace Tabuada
         static void Main(string[] args)
         {
             bool terminar = false;
-            int número;
+            int numero;
             int zero = 0;
             while (!terminar)
             {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Insira um número e veja sua tabuada.");
-            bool númerobool = Int32.TryParse(Console.ReadLine(), out número);
-            if (!númerobool)
+            bool númerobool = Int32.TryParse(Console.ReadLine(), out numero);
+            if (!númerobool || numero <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Valor inválido.");
@@ -27,8 +27,8 @@ namespace Tabuada
                 Console.Clear();
                 while (zero < 11)
                 {
-                    int resultado = número * zero;
-                    Console.WriteLine($"{número} x {zero} = {resultado}");
+                    int resultado = numero * zero;
+                    Console.WriteLine($"{numero} x {zero} = {resultado}");
                     zero = zero + 1;
                 }
                 terminar = true;
